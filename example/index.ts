@@ -1,7 +1,8 @@
 import { AxiosError } from "axios";
 import { FCM } from "@kazion/fcm-node-http";
+import path from "path";
 
-const fcm = new FCM("creds.json");
+const fcm = new FCM(path.join(__dirname, "../creds.json"));
 
 const fcmToken =
   "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3krYuI2ZRqwJxJGxsIdZmhWiJg9xRNeCC8ulgUR_zjqIB4oV5ov-eRjEdczNLccMAlL9V4jgObPLamRo9GyQwtzXOUuyQpnEnyorojRsNpABl16DgmLGkyKW";

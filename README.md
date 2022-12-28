@@ -8,28 +8,32 @@ A Node.js client for the [FCM HTTP v1 API](https://firebase.google.com/docs/clou
 ## Installation
 
 npm
-```bash 
-npm install @kazion/fcm-node-http 
+
+```bash
+npm install @kazion/fcm-node-http
 ```
 
 yarn
+
 ```bash
 yarn add @kazion/fcm-node-http
 ```
 
 ## Usage
 
+Example usage of the library [Demo](https://github.com/Kazion500/fcm-node-http/tree/main/example)
+
 ```js
 import { FCM } from "@kazion/fcm-node-http";
+
+const path_to_private_key = "path/to/private_key.json";
+
+const fcm = new FCM(path_to_private_key);
 ```
 
 ### Send a message
 
 ```ts
-import { FCM } from "@kazion/fcm-node-http";
-
-const fcm = new FCM("creds.json");
-
 const fcmToken = "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3kr...";
 
 const message = {
@@ -46,9 +50,6 @@ await fcm.send(fcmToken, message);
 ### Send a message to multiple tokens
 
 ```ts
-import { FCM } from "@kazion/fcm-node-http";
-
-const fcm = new FCM("creds.json");
 
 const fcmToken1 = "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3kr...";
 const fcmToken2 = "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3kr...";
