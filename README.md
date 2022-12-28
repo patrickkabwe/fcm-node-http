@@ -7,8 +7,14 @@ A Node.js client for the [FCM HTTP v1 API](https://firebase.google.com/docs/clou
 
 ## Installation
 
+npm
+```bash 
+npm install @kazion/fcm-node-http 
+```
+
+yarn
 ```bash
-npm install fcm-node-http
+yarn add @kazion/fcm-node-http
 ```
 
 ## Usage
