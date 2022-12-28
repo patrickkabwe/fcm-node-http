@@ -20,7 +20,6 @@ import { FCM } from "@kazion/fcm-node-http";
 ### Send a message
 
 ```ts
-import { AxiosError } from "axios";
 import { FCM } from "@kazion/fcm-node-http";
 
 const fcm = new FCM("creds.json");

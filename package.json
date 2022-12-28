@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node example/index.ts",
-    "version": "git add -A . && git commit -m 'release v$npm_package_version' && git tag v$npm_package_version",
+    "version": "git add -A . && git commit -m \"chore(release): v$npm_package_version\"",
     "postversion": "git push && git push --tags"
   },
   "publishConfig": {
