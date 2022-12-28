@@ -1,6 +1,6 @@
 {
   "name": "@kazion/fcm-node-http",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "build": "tsc",
     "dev": "ts-node example/index.ts",
     "preversion": "echo $npm_package_version",
-    "version": "git add -A . && git commit -m \"chore(release): v$npm_package_version\"",
+    "version": "git add -A . && git commit -m chore(release): v$npm_package_version",
     "postversion": "git push --tags"
   },
   "publishConfig": {
