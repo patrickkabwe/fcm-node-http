@@ -1,1 +1,1 @@
-export * from "./FCM";
+export { FCM } from "./FCM";

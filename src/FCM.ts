@@ -1,7 +1,7 @@
+import { existsSync, readFileSync } from "fs";
 import axios from "axios";
 import { GoogleAuth } from "google-auth-library";
-import { type FCMPayload } from "../types";
-import fs from "node:fs";
+import { type Message } from "./types";
 
 export class FCM {
   private auth: GoogleAuth;
@@ -9,9 +9,12 @@ export class FCM {
   private url: string;
 
   constructor(path_to_creds: string) {
-    const creds = JSON.parse(fs.readFileSync(path_to_creds, "utf8"));
-    if (!creds.project_id) throw new Error("No project_id found in creds.json");
-
+    if (!existsSync(path_to_creds)) {
+      throw new Error("Enter a valid path to your private key file");
+    }
+    const creds = JSON.parse(readFileSync(path_to_creds, "utf8"));
+    if (!creds.project_id)
+      throw new Error("No project_id found in  private key file");
     this.auth = new GoogleAuth({
       keyFile: path_to_creds,
       clientOptions: {
@@ -26,22 +29,65 @@ export class FCM {
   }
 
   async getAccessToken() {
-    console.log("Access Token");
     this.client = await this.auth.getClient();
     const { token } = await this.client.getAccessToken();
-
     return token;
   }
 
-  async send(payload: FCMPayload) {
-    const token = await this.getAccessToken();
-    const response = await axios(this.url, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      data: payload,
-    });
-    return response.data;
+  async send(
+    registrationToken: string,
+    message: Message
+  ): Promise<{ name: string }> {
+    try {
+      const token = await this.getAccessToken();
+      const response = await axios(this.url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          message: {
+            token: registrationToken,
+            ...message,
+          },
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async sendAll(registrationTokens: string[], message: Message) {
+    try {
+      const promises = registrationTokens.map((registrationToken) => {
+        return this.send(registrationToken, message);
+      });
+      const response = await Promise.all(promises);
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async sendToTopic(topic: string, message: Message) {
+    try {
+      const token = await this.getAccessToken();
+      const response = await axios(this.url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          message: {
+            topic,
+            ...message,
+          },
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
 }

@@ -10,7 +10,7 @@ type Color = { red: number; green: number; blue: number; alpha: number };
 type Notification = {
   title: string;
   body: string;
-  image: string;
+  image?: string;
 };
 
 type AndroidNotification = {
@@ -123,11 +123,10 @@ enum Visibility {
 
 export type Message = {
   name?: string;
-  data: Data;
-  token: string;
+  data?: Data;
   topic?: string;
   condition?: string;
-  notification?: Notification;
+  notification: Notification;
   android?: AndroidConfig;
   apns?: ApnsConfig;
   webpush?: WebpushConfig;
