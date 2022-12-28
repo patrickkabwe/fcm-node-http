@@ -27,30 +27,20 @@ const fcm = new FCM("creds.json");
 
 const fcmToken = "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3kr...";
 
-const main = async () => {
-  try {
-    const message = {
-      notification: {
-        body: "body",
-        title: "title",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png",
-      },
-    };
-    await fcm.send(fcmToken, message);
-  } catch (error: any) {
-    if (error instanceof AxiosError) console.log("error", error.response?.data);
-    else console.log("error", error);
-  }
+const message = {
+  notification: {
+    body: "body",
+    title: "title",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png",
+  },
 };
-
-main();
+await fcm.send(fcmToken, message);
 ```
 
 ### Send a message to multiple tokens
 
 ```ts
-import { AxiosError } from "axios";
 import { FCM } from "@kazion/fcm-node-http";
 
 const fcm = new FCM("creds.json");
@@ -58,22 +48,15 @@ const fcm = new FCM("creds.json");
 const fcmToken1 = "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3kr...";
 const fcmToken2 = "ee8-TV2BT7ucVYjesxPXdD:APA91bFQvY5sZdn6n1PW3kr...";
 
-const main = async () => {
-  try {
-    const message = {
-      notification: {
-        body: "body",
-        title: "title",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png",
-      },
-    };
-    await fcm.send([fcmToken1, fcmToken2], message);
-  } catch (error: any) {
-    if (error instanceof AxiosError) console.log("error", error.response?.data);
-    else console.log("error", error);
-  }
+const message = {
+  notification: {
+    body: "body",
+    title: "title",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png",
+  },
 };
+await fcm.send([fcmToken1, fcmToken2], message);
 
 main();
 ```
