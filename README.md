@@ -1,9 +1,9 @@
 # fcm-node-http
 
+A Node.js client for the [FCM HTTP v1 API](https://firebase.google.com/docs/cloud-messaging/http-server-ref).
+
 [![Build Status](https://travis-ci.org/cedadev/fcm-node-http.svg?branch=main)](https://travis-ci.org/cedadev/fcm-node-http)
 [![Coverage Status](https://coveralls.io/repos/github/cedadev/fcm-node-http/badge.svg?branch=master)](https://coveralls.io/github/cedadev/fcm-node-http?branch=main)
-
-A Node.js client for the [FCM HTTP v1 API](https://firebase.google.com/docs/cloud-messaging/http-server-ref).
 
 ## Installation
 
