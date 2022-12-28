@@ -61,7 +61,7 @@ const message = {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png",
   },
 };
-await fcm.send([fcmToken1, fcmToken2], message);
+await fcm.sendAll([fcmToken1, fcmToken2], message);
 
 main();
 ```
