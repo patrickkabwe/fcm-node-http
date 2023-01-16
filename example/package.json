@@ -13,6 +13,6 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@kazion/fcm-node-http": "^1.0.4"
+    "@kazion/fcm-node-http": "^1.0.6"
   }
 }

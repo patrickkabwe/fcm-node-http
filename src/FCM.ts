@@ -55,6 +55,7 @@ export class FCM {
       });
       return response.data;
     } catch (error) {
+      handleAxiosError(error);
       throw error;
     }
   }

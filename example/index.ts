@@ -1,4 +1,3 @@
-import { AxiosError } from "axios";
 import { FCM } from "@kazion/fcm-node-http";
 import path from "path";
 
@@ -18,8 +17,7 @@ const main = async () => {
       },
     });
   } catch (error: any) {
-    if (error instanceof AxiosError) console.log("error", error.response?.data.error.details);
-    else console.log("error", error);
+    console.log(error);
   }
 };
 
