@@ -5,9 +5,9 @@
   "types": "lib/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib && tsc",
     "dev": "ts-node example/index.ts",
-    "preversion": "echo $npm_package_version",
+    "preversion": "echo $npm_package_version && yarn build",
     "version": "git add . && git commit -m \"chore(release): v$npm_package_version\" && git tag v$npm_package_version && git push && git push --tags"
   },
   "publishConfig": {

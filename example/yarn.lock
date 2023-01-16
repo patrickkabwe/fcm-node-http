@@ -27,10 +27,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@kazion/fcm-node-http@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@kazion/fcm-node-http/-/fcm-node-http-1.0.6.tgz#eb4c63c257936d14ce159cc7e59b2ed042b3a512"
-  integrity sha512-8nSZWfCQp7SueqKirz6yaTeyMMZS9XXHH3M08bpoDOH3IPdfziCsyYwEjKXVhI7J11Q01clrKY72ospIV4/mcQ==
+"@kazion/fcm-node-http@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@kazion/fcm-node-http/-/fcm-node-http-1.0.7.tgz#454027120255c7c5fda678cb2283aa8dcd350407"
+  integrity sha512-vf0avuGyK71z3QFxLn4ZUrH/YJSiIJ8utZVfB1ze/r40IpFY8hR3AWx01V6clTccVDalhfV3pYOUKx7ZujuWlw==
   dependencies:
     axios "^1.2.1"
     google-auth-library "^8.7.0"
