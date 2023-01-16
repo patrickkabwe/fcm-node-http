@@ -132,3 +132,13 @@ export type Message = {
   webpush?: WebpushConfig;
   fcm_options?: FcmOptions;
 };
+
+export type ErrorType =
+  | "UNSPECIFIED_ERROR"
+  | "INVALID_ARGUMENT"
+  | "UNREGISTERED"
+  | "SENDER_ID_MISMATCH"
+  | "QUOTA_EXCEEDED"
+  | "UNAVAILABLE"
+  | "INTERNAL"
+  | "THIRD_PARTY_AUTH_ERROR";

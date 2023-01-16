@@ -18,7 +18,7 @@ const main = async () => {
       },
     });
   } catch (error: any) {
-    if (error instanceof AxiosError) console.log("error", error.response?.data);
+    if (error instanceof AxiosError) console.log("error", error.response?.data.error.details);
     else console.log("error", error);
   }
 };

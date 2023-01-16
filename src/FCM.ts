@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "fs";
 import axios from "axios";
 import { GoogleAuth } from "google-auth-library";
 import { type Message } from "./types";
+import { handleAxiosError } from "./errors";
 
 export class FCM {
   private auth: GoogleAuth;
@@ -66,7 +67,7 @@ export class FCM {
       const response = await Promise.all(promises);
       return response;
     } catch (error) {
-      throw error;
+      handleAxiosError(error);
     }
   }
 
@@ -87,7 +88,7 @@ export class FCM {
       });
       return response.data;
     } catch (error) {
-      throw error;
+      handleAxiosError(error);
     }
   }
 }
