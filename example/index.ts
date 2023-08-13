@@ -15,6 +15,18 @@ const main = async () => {
         image:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png",
       },
+      apns: {
+        payload: {
+          aps: {
+            sound: "default",
+            badge: 1,
+            content_available: true,
+            thread_id: "thread_id",
+            alert: "",
+            category: "",
+          },
+        },
+      },
     });
   } catch (error: any) {
     console.log(error);

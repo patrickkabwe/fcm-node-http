@@ -52,7 +52,7 @@ export class FCM {
             ...message,
           },
         },
-      });
+      });      
       return response.data;
     } catch (error) {
       handleAxiosError(error);

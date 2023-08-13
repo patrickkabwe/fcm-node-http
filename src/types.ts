@@ -77,12 +77,12 @@ type WebpushConfig = {
 };
 
 type Aps = {
-  alert: string;
+  alert?: string;
   badge: number;
   sound: string;
   content_available: boolean;
-  category: string;
-  thread_id: string;
+  category?: string;
+  thread_id?: string;
 };
 
 type ApnsFcmOptions = {
@@ -92,7 +92,7 @@ type ApnsFcmOptions = {
 
 type ApnsPayload = {
   aps: Aps;
-  fcm_options: ApnsFcmOptions;
+  fcm_options?: ApnsFcmOptions;
 };
 
 type ApnsConfig = {
