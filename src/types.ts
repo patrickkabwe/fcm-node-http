@@ -96,7 +96,7 @@ type ApnsPayload = {
 };
 
 type ApnsConfig = {
-  headers: Headers;
+  headers?: Headers;
   payload: ApnsPayload;
 };
 

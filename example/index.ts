@@ -21,11 +21,8 @@ const main = async () => {
             sound: "default",
             badge: 1,
             content_available: true,
-            thread_id: "thread_id",
-            alert: "",
-            category: "",
           },
-        },
+        }
       },
     });
   } catch (error: any) {
